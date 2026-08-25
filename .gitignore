@@ -1,0 +1,4 @@
+# Obsidian's own ephemeral UI state (window layout, last-open tabs) - not
+# meaningful to sync across devices and changes on almost every save.
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
