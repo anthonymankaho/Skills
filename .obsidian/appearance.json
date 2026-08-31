@@ -1,1 +1,6 @@
-{}
+{
+  "accentColor": "#1159e8",
+  "cssTheme": "Pisum",
+  "theme": "obsidian",
+  "baseFontSize": 18
+}

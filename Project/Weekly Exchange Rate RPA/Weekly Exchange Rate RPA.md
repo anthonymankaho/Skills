@@ -14,6 +14,7 @@ Weekly multi-currency exchange-rate report, rebuilt from UiPath RPA into PowerSh
 - [[RMB CNH Exchange Rate (May Lau)]] reuses this project's Gmail OAuth setup for attachment-capable drafts.
 - [[Monthly Exchange Rate RPA]] is a **separate** project — different report, different recipients, don't conflate the two.
 - Feeds lessons into [[Skill - Excel to Interactive HTML Report]].
+- Full script-by-script list: [[Weekly Exchange Rate RPA - PowerShell Scripts Reference]].
 
 ## Full detail
 `C:\Users\User\.claude\projects\c--Users-User-Desktop\memory\project_weekly_exchange_rate_rpa.md`

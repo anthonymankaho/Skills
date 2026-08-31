@@ -9,7 +9,6 @@ Multi-currency exchange rate report sent monthly to Steven / Fiona / Alex / Ada 
 **Important distinction:** this is **NOT** the same project as [[RMB CNH Exchange Rate (May Lau)]] — that one is a single-currency (BOC HK CNH/HKD) report to a different recipient (May Lau). Easy to conflate by name; keep them separate.
 
 ## Related
-- Category: [[PS]]
 - Sibling exchange-rate projects: [[Weekly Exchange Rate RPA]], [[RMB CNH Exchange Rate (May Lau)]].
 
 ## Full detail
