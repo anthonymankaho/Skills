@@ -14,6 +14,12 @@ All PowerShell scripts, located in `C:\Users\User\Desktop\Global Purchase Report
 > $ReportMonth = "2026-07"
 > ```
 
+## 資料索取 / Data collection (runs first, before the core pipeline)
+
+| 腳本 Script | 用途 Purpose | 指令 Command |
+|---|---|---|
+| `New-InterGroupPurchaseDataRequestDrafts.ps1` | 月初向 MZQ/MIL/RACO/TVS/MAZ 索取當月採購資料，建立 5 封各自語言的 Gmail 草稿（`-ReportMonth` 為執行當月，自動往前推一個月當索取期間）Requests that month's purchase data from MZQ/MIL/RACO/TVS/MAZ, creating 5 Gmail drafts each in that contact's language (`-ReportMonth` is the run month, auto-offset -1 month for the requested period) | `.\New-InterGroupPurchaseDataRequestDrafts.ps1 -ReportMonth $ReportMonth`（`-Only MZQ` 可只建單一草稿測試 / `-Only MZQ` for a single test draft） |
+
 ## 每月核心流程 / Monthly core pipeline
 
 | # | 腳本 Script | 用途 Purpose | 指令 Command |

@@ -34,6 +34,12 @@ Monthly report merging purchase data from 7 entities (MHK, STC, MZQ, MIL, RACO, 
 - **2026-09-02：Gmail 收件人清單移除 WSCheung**——Ken 告知已離職，`New-MonthlyEmailDraft.ps1` 的 Cc 清單移除 `Wscheung@meyer-mil.com`，目前為 15 人（3位To + 12位Cc）。
   **2026-09-02: removed WSCheung from the Gmail recipient list** — Ken reported he's left the company; `New-MonthlyEmailDraft.ps1`'s Cc list dropped `Wscheung@meyer-mil.com`, now 15 people (3 To + 12 Cc).
 
+- **2026-09-08：HTML互動版報表全部篩選器升級為可搜尋**，並新增 Fittings 頁的 ProdFamiFittingsCode 篩選器（正確抓取 Product Family 代碼，例如搜尋「HD」可找到 HDG/HDI/HDS/HDV）；已透過 `#global_purchase_report` Slack頻道公告發布。
+  **2026-09-08: all HTML report filters upgraded with a search box**, plus a new ProdFamiFittingsCode filter added on the Fittings page (correctly pulls Product Family codes, e.g. searching "HD" finds HDG/HDI/HDS/HDV); announced via the `#global_purchase_report` Slack channel.
+
+- **2026-09-08：新增 `New-InterGroupPurchaseDataRequestDrafts.ps1`**——月初向 MZQ/MIL/RACO/TVS/MAZ 五個實體索取當月採購資料，建立 5 封各自語言（簡體中文/英文/義大利文/西班牙文）的 Gmail 草稿，`-ReportMonth` 代表執行當月、自動往前推一個月當作索取期間（沿用同一套 [[Weekly Exchange Rate RPA]] 的 Gmail OAuth，只建草稿絕不自動寄出）。實測抓到兩個 PowerShell 字串插值真實 bug，值得記住：`"=?UTF-8?B?$b64?="` 和 `"...$Year?"` 都會被誤判——PowerShell 把 `?` 當成變數名稱的一部分解析（因為 `$?` 本身是合法變數），導致變數整個插值成空字串；修法是用 `${b64}`/`${Year}` 明確界定變數名稱邊界。README.md 已同步新增使用說明。
+  **2026-09-08: added `New-InterGroupPurchaseDataRequestDrafts.ps1`** — at the start of the month, requests that month's purchase data from the 5 entities MZQ/MIL/RACO/TVS/MAZ by creating 5 Gmail drafts, each in that contact's language (Simplified Chinese/English/Italian/Spanish); `-ReportMonth` means the month you're running it in, auto-offset by -1 month for the requested period (reuses the same [[Weekly Exchange Rate RPA]] Gmail OAuth, only ever creates drafts, never auto-sends). Testing surfaced two real PowerShell string-interpolation bugs worth remembering: both `"=?UTF-8?B?$b64?="` and `"...$Year?"` silently interpolated to empty, because PowerShell parses `?` as a valid variable-name character (since `$?` is itself a legitimate automatic variable) — fixed with explicit `${b64}`/`${Year}` braces. README.md updated to document usage.
+
 ## Monthly Pipeline / 每月流程
 
 見 [[Global Purchase Report RPA - Monthly Pipeline]]——每月重複執行的 PowerShell 步驟子心智圖（Build → PEN匯率 → 手動AA/AB → Complete-FormulaColumns → 稽核摘要 → Publish → 選用HTML → Gmail草稿 → Slack發布），含每支腳本的用途與2026-07目前執行狀態。純文字版清單見 [[PowerShell Scripts Reference]]。

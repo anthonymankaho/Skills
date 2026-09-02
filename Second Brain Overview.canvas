@@ -1,10 +1,8 @@
 {
 	"nodes":[
 		{"id":"n-hub","type":"text","text":"# Second Brain","x":-130,"y":-40,"width":260,"height":80},
-
 		{"id":"grp-skill","type":"group","x":-1400,"y":-500,"width":900,"height":1000,"color":"4","label":"Skills"},
 		{"id":"grp-project","type":"group","x":500,"y":-500,"width":900,"height":1000,"color":"6","label":"Project"},
-
 		{"id":"n-workstyle","type":"file","file":"Skills/Working Style and Preferences.md","x":-1350,"y":-480,"width":260,"height":80},
 		{"id":"n-skill-chain","type":"file","file":"Skills/Skill - Incremental Report File Chaining.md","x":-1350,"y":-350,"width":260,"height":80},
 		{"id":"n-skill-html","type":"file","file":"Skills/Skill - Excel to Interactive HTML Report.md","x":-1050,"y":-350,"width":260,"height":80},
@@ -12,13 +10,12 @@
 		{"id":"n-rmb-cnh","type":"file","file":"Skills/RMB CNH Exchange Rate (May Lau).md","x":-1050,"y":-210,"width":260,"height":80},
 		{"id":"n-ref-nlm","type":"file","file":"Skills/Reference - NotebookLM Video Subtitle Prompts.md","x":-1350,"y":-70,"width":260,"height":80},
 		{"id":"n-ref-mfs","type":"file","file":"Skills/Reference - AI MFS Governance Framework.md","x":-1050,"y":-70,"width":260,"height":80},
-
 		{"id":"n-weekly-fx","type":"file","file":"Project/Weekly Exchange Rate RPA.md","x":550,"y":-350,"width":260,"height":80},
 		{"id":"n-monthly-fx","type":"file","file":"Project/Monthly Exchange Rate RPA.md","x":850,"y":-350,"width":260,"height":80},
 		{"id":"n-gpr","type":"file","file":"Project/Global Purchase Report RPA.md","x":550,"y":-210,"width":260,"height":80},
 		{"id":"n-eic-gs","type":"file","file":"Project/EIC GS Suite HTML Tool.md","x":850,"y":-210,"width":260,"height":80},
-		{"id":"n-gpl-fs","type":"file","file":"Project/GPL FS Roll-Forward.md","x":550,"y":-70,"width":260,"height":80},
-		{"id":"n-gpl-jpm","type":"file","file":"Project/GPL JPM Notice Processor.md","x":850,"y":-70,"width":260,"height":80},
+		{"id":"n-gpl-fs","type":"file","file":"Project/GPL/GPL FS Roll-Forward.md","x":550,"y":-70,"width":260,"height":80},
+		{"id":"n-gpl-jpm","type":"file","file":"Project/GPL/GPL JPM Notice Processor.md","x":850,"y":-70,"width":260,"height":80},
 		{"id":"n-eic-fs","type":"file","file":"Project/EIC FS Roll-Forward.md","x":550,"y":70,"width":260,"height":80},
 		{"id":"n-mpl","type":"file","file":"Project/MPL AI-Augmented Financial Close.md","x":850,"y":70,"width":260,"height":80},
 		{"id":"n-worktask","type":"file","file":"Project/Monthly Worktask Tracker.md","x":550,"y":210,"width":260,"height":80},
@@ -27,7 +24,6 @@
 	"edges":[
 		{"id":"e-hub-skill","fromNode":"n-hub","fromSide":"left","toNode":"grp-skill","toSide":"right"},
 		{"id":"e-hub-project","fromNode":"n-hub","fromSide":"right","toNode":"grp-project","toSide":"left"},
-
 		{"id":"e-mfs-mpl","fromNode":"n-ref-mfs","fromSide":"right","toNode":"n-mpl","toSide":"left"},
 		{"id":"e-onedrive-tasks","fromNode":"n-onedrive","fromSide":"left","toNode":"n-skill-tasks","toSide":"right"},
 		{"id":"e-eicfs-gplfs","fromNode":"n-eic-fs","fromSide":"top","toNode":"n-gpl-fs","toSide":"bottom"},
