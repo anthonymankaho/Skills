@@ -40,6 +40,7 @@ All PowerShell scripts, located in `C:\Users\User\Desktop\Global Purchase Report
 | 腳本 Script | 用途 Purpose | 指令 Command |
 |---|---|---|
 | `Global Purchase Report RPA\HTML_Report_Generator\Generate-PurchaseReportHtml.ps1` | 把當月最終報表轉成單一自包含互動式HTML檔案（Dashboard圖表、GLID/Fittings/Packaging/Coating篩選、Exchange Rate互動表格）。刻意不接自動化流程，需等 AA/AB 定稿後手動執行；`-Publish` 才產出正式命名快照，平常只更新 TEMP 預覽檔 Converts the finalized monthly report into a single self-contained interactive HTML file. Deliberately manual, run only after AA/AB are finalized; `-Publish` produces the dated snapshot, otherwise only updates the TEMP preview file | `cd "Global Purchase Report RPA\HTML_Report_Generator"`<br>`.\Generate-PurchaseReportHtml.ps1 -Publish`（測試不加 `-Publish` / omit `-Publish` for a test run） |
+| `Global Purchase Report RPA\HTML_Report_Generator\Copy-ProdFamiDescToSource.ps1` | 一次性/視需要：把 `OUTSIDETEMP.xlsx` 已算好的 ProdFamiDesc（產品家族）值，逐列核對對齊後複製進正式月報來源檔的新增第37欄；核對不過直接中止不寫入 One-off/as-needed: copies OUTSIDETEMP.xlsx's computed ProdFamiDesc (Product Family) values into a new 37th column on the official source file, only after verifying every row aligns; aborts without writing if any row doesn't match | `cd "Global Purchase Report RPA\HTML_Report_Generator"`<br>`.\Copy-ProdFamiDescToSource.ps1` |
 
 ## 不適用/歷史一次性腳本 / Not applicable — historical one-offs
 
