@@ -1,43 +1,419 @@
 {
-	"nodes":[
-		{"id":"n-hub","type":"text","text":"# Second Brain","x":-130,"y":-40,"width":260,"height":80},
-		{"id":"grp-skill","type":"group","x":-1400,"y":-500,"width":900,"height":1000,"color":"4","label":"Skills"},
-		{"id":"grp-project","type":"group","x":500,"y":-500,"width":900,"height":1000,"color":"6","label":"Project"},
-		{"id":"n-workstyle","type":"file","file":"Skills/Working Style and Preferences.md","x":-1350,"y":-480,"width":260,"height":80},
-		{"id":"n-skill-chain","type":"file","file":"Skills/Skill - Incremental Report File Chaining.md","x":-1350,"y":-350,"width":260,"height":80},
-		{"id":"n-skill-html","type":"file","file":"Skills/Skill - Excel to Interactive HTML Report.md","x":-1050,"y":-350,"width":260,"height":80},
-		{"id":"n-skill-tasks","type":"file","file":"Skills/Skill - Hardening Windows Scheduled Tasks.md","x":-1350,"y":-210,"width":260,"height":80},
-		{"id":"n-rmb-cnh","type":"file","file":"Skills/RMB CNH Exchange Rate (May Lau).md","x":-1050,"y":-210,"width":260,"height":80},
-		{"id":"n-ref-nlm","type":"file","file":"Skills/Reference - NotebookLM Video Subtitle Prompts.md","x":-1350,"y":-70,"width":260,"height":80},
-		{"id":"n-ref-mfs","type":"file","file":"Skills/Reference - AI MFS Governance Framework.md","x":-1050,"y":-70,"width":260,"height":80},
-		{"id":"n-weekly-fx","type":"file","file":"Project/Weekly Exchange Rate RPA.md","x":550,"y":-350,"width":260,"height":80},
-		{"id":"n-monthly-fx","type":"file","file":"Project/Monthly Exchange Rate RPA.md","x":850,"y":-350,"width":260,"height":80},
-		{"id":"n-gpr","type":"file","file":"Project/Global Purchase Report RPA.md","x":550,"y":-210,"width":260,"height":80},
-		{"id":"n-eic-gs","type":"file","file":"Project/EIC GS Suite HTML Tool.md","x":850,"y":-210,"width":260,"height":80},
-		{"id":"n-gpl-fs","type":"file","file":"Project/GPL/GPL FS Roll-Forward.md","x":550,"y":-70,"width":260,"height":80},
-		{"id":"n-gpl-jpm","type":"file","file":"Project/GPL/GPL JPM Notice Processor.md","x":850,"y":-70,"width":260,"height":80},
-		{"id":"n-eic-fs","type":"file","file":"Project/EIC FS Roll-Forward.md","x":550,"y":70,"width":260,"height":80},
-		{"id":"n-mpl","type":"file","file":"Project/MPL AI-Augmented Financial Close.md","x":850,"y":70,"width":260,"height":80},
-		{"id":"n-worktask","type":"file","file":"Project/Monthly Worktask Tracker.md","x":550,"y":210,"width":260,"height":80},
-		{"id":"n-onedrive","type":"file","file":"Project/Desktop-OneDrive Auto Sync.md","x":850,"y":210,"width":260,"height":80}
-	],
-	"edges":[
-		{"id":"e-hub-skill","fromNode":"n-hub","fromSide":"left","toNode":"grp-skill","toSide":"right"},
-		{"id":"e-hub-project","fromNode":"n-hub","fromSide":"right","toNode":"grp-project","toSide":"left"},
-		{"id":"e-mfs-mpl","fromNode":"n-ref-mfs","fromSide":"right","toNode":"n-mpl","toSide":"left"},
-		{"id":"e-onedrive-tasks","fromNode":"n-onedrive","fromSide":"left","toNode":"n-skill-tasks","toSide":"right"},
-		{"id":"e-eicfs-gplfs","fromNode":"n-eic-fs","fromSide":"top","toNode":"n-gpl-fs","toSide":"bottom"},
-		{"id":"e-eicfs-eicgs","fromNode":"n-eic-fs","fromSide":"top","toNode":"n-eic-gs","toSide":"bottom"},
-		{"id":"e-eicfs-chain","fromNode":"n-eic-fs","fromSide":"left","toNode":"n-skill-chain","toSide":"right"},
-		{"id":"e-html-weeklyfx","fromNode":"n-skill-html","fromSide":"right","toNode":"n-weekly-fx","toSide":"left"},
-		{"id":"e-html-gpr","fromNode":"n-skill-html","fromSide":"right","toNode":"n-gpr","toSide":"left"},
-		{"id":"e-gpr-chain","fromNode":"n-gpr","fromSide":"left","toNode":"n-skill-chain","toSide":"right"},
-		{"id":"e-gpr-rmb","fromNode":"n-gpr","fromSide":"left","toNode":"n-rmb-cnh","toSide":"right"},
-		{"id":"e-eicgs-html","fromNode":"n-eic-gs","fromSide":"left","toNode":"n-skill-html","toSide":"right"},
-		{"id":"e-gplfs-gpljpm","fromNode":"n-gpl-fs","fromSide":"right","toNode":"n-gpl-jpm","toSide":"left"},
-		{"id":"e-gplfs-chain","fromNode":"n-gpl-fs","fromSide":"left","toNode":"n-skill-chain","toSide":"right"},
-		{"id":"e-monthlyfx-weeklyfx","fromNode":"n-monthly-fx","fromSide":"left","toNode":"n-weekly-fx","toSide":"right"},
-		{"id":"e-monthlyfx-rmb","fromNode":"n-monthly-fx","fromSide":"left","toNode":"n-rmb-cnh","toSide":"right"},
-		{"id":"e-weeklyfx-rmb","fromNode":"n-weekly-fx","fromSide":"left","toNode":"n-rmb-cnh","toSide":"right"}
-	]
+    "edges":  [
+                  {
+                      "toNode":  "index-working",
+                      "fromNode":  "home",
+                      "toSide":  "top",
+                      "id":  "edge-home-working",
+                      "fromSide":  "left"
+                  },
+                  {
+                      "toNode":  "index-skills",
+                      "fromNode":  "home",
+                      "toSide":  "top",
+                      "id":  "edge-home-skills",
+                      "fromSide":  "right"
+                  },
+                  {
+                      "toNode":  "work-0",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-0",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-1",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-1",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-2",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-2",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-3",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-3",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-4",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-4",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-5",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-5",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-6",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-6",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-7",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-7",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-8",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-8",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-9",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-9",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-10",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-10",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-11",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-11",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-12",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-12",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-13",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-13",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-14",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-14",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-15",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-15",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-16",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-16",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-17",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-17",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "work-18",
+                      "fromNode":  "index-working",
+                      "toSide":  "top",
+                      "id":  "ew-18",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "skill-0",
+                      "fromNode":  "index-skills",
+                      "toSide":  "top",
+                      "id":  "es-0",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "skill-1",
+                      "fromNode":  "index-skills",
+                      "toSide":  "top",
+                      "id":  "es-1",
+                      "fromSide":  "bottom"
+                  },
+                  {
+                      "toNode":  "skill-2",
+                      "fromNode":  "index-skills",
+                      "toSide":  "top",
+                      "id":  "es-2",
+                      "fromSide":  "bottom"
+                  }
+              ],
+    "nodes":  [
+                  {
+                      "id":  "home",
+                      "width":  300,
+                      "height":  100,
+                      "y":  0,
+                      "type":  "file",
+                      "x":  0,
+                      "file":  "README.md"
+                  },
+                  {
+                      "id":  "group-working",
+                      "y":  250,
+                      "width":  2100,
+                      "color":  "6",
+                      "type":  "group",
+                      "height":  1800,
+                      "x":  -1650,
+                      "label":  "Working Projects"
+                  },
+                  {
+                      "id":  "group-skills",
+                      "y":  250,
+                      "width":  1000,
+                      "color":  "4",
+                      "type":  "group",
+                      "height":  780,
+                      "x":  550,
+                      "label":  "Skills"
+                  },
+                  {
+                      "id":  "index-working",
+                      "width":  330,
+                      "height":  100,
+                      "y":  320,
+                      "type":  "file",
+                      "x":  -1550,
+                      "file":  "Working Projects/Working Projects Index.md"
+                  },
+                  {
+                      "id":  "index-skills",
+                      "width":  330,
+                      "height":  100,
+                      "y":  320,
+                      "type":  "file",
+                      "x":  650,
+                      "file":  "Skills/Skills Overview.md"
+                  },
+                  {
+                      "id":  "work-0",
+                      "width":  300,
+                      "height":  100,
+                      "y":  500,
+                      "type":  "file",
+                      "x":  -1550,
+                      "file":  "Working Projects/Repositories/ALUM Purchase Report.md"
+                  },
+                  {
+                      "id":  "work-1",
+                      "width":  300,
+                      "height":  100,
+                      "y":  500,
+                      "type":  "file",
+                      "x":  -1060,
+                      "file":  "Working Projects/Repositories/Desktop OneDrive Sync.md"
+                  },
+                  {
+                      "id":  "work-2",
+                      "width":  300,
+                      "height":  100,
+                      "y":  500,
+                      "type":  "file",
+                      "x":  -570,
+                      "file":  "Working Projects/Repositories/EIC Goldman Sachs Processing.md"
+                  },
+                  {
+                      "id":  "work-3",
+                      "width":  300,
+                      "height":  100,
+                      "y":  500,
+                      "type":  "file",
+                      "x":  -80,
+                      "file":  "Working Projects/Repositories/FBW Royalty Report.md"
+                  },
+                  {
+                      "id":  "work-4",
+                      "width":  300,
+                      "height":  100,
+                      "y":  740,
+                      "type":  "file",
+                      "x":  -1550,
+                      "file":  "Working Projects/Repositories/GitHub Desktop Tutorial.md"
+                  },
+                  {
+                      "id":  "work-5",
+                      "width":  300,
+                      "height":  100,
+                      "y":  740,
+                      "type":  "file",
+                      "x":  -1060,
+                      "file":  "Working Projects/Repositories/Global Purchase Report.md"
+                  },
+                  {
+                      "id":  "work-6",
+                      "width":  300,
+                      "height":  100,
+                      "y":  740,
+                      "type":  "file",
+                      "x":  -570,
+                      "file":  "Working Projects/Repositories/GPL Gold Plume.md"
+                  },
+                  {
+                      "id":  "work-7",
+                      "width":  300,
+                      "height":  100,
+                      "y":  740,
+                      "type":  "file",
+                      "x":  -80,
+                      "file":  "Working Projects/Repositories/HKFRS AS Study Platform.md"
+                  },
+                  {
+                      "id":  "work-8",
+                      "width":  300,
+                      "height":  100,
+                      "y":  980,
+                      "type":  "file",
+                      "x":  -1550,
+                      "file":  "Working Projects/Repositories/HKICPA Standards and Study Library.md"
+                  },
+                  {
+                      "id":  "work-9",
+                      "width":  300,
+                      "height":  100,
+                      "y":  980,
+                      "type":  "file",
+                      "x":  -1060,
+                      "file":  "Working Projects/Repositories/Hong Kong Tax Study Hub.md"
+                  },
+                  {
+                      "id":  "work-10",
+                      "width":  300,
+                      "height":  100,
+                      "y":  980,
+                      "type":  "file",
+                      "x":  -570,
+                      "file":  "Working Projects/Repositories/IELTS Prep Desk.md"
+                  },
+                  {
+                      "id":  "work-11",
+                      "width":  300,
+                      "height":  100,
+                      "y":  980,
+                      "type":  "file",
+                      "x":  -80,
+                      "file":  "Working Projects/Repositories/MPL System Portal.md"
+                  },
+                  {
+                      "id":  "work-12",
+                      "width":  300,
+                      "height":  100,
+                      "y":  1220,
+                      "type":  "file",
+                      "x":  -1550,
+                      "file":  "Working Projects/Repositories/MPL.md"
+                  },
+                  {
+                      "id":  "work-13",
+                      "width":  300,
+                      "height":  100,
+                      "y":  1220,
+                      "type":  "file",
+                      "x":  -1060,
+                      "file":  "Working Projects/Repositories/MTC Purchase Report.md"
+                  },
+                  {
+                      "id":  "work-14",
+                      "width":  300,
+                      "height":  100,
+                      "y":  1220,
+                      "type":  "file",
+                      "x":  -570,
+                      "file":  "Working Projects/Repositories/MTC Sales Report.md"
+                  },
+                  {
+                      "id":  "work-15",
+                      "width":  300,
+                      "height":  100,
+                      "y":  1220,
+                      "type":  "file",
+                      "x":  -80,
+                      "file":  "Working Projects/Repositories/RMB CNH Exchange Report.md"
+                  },
+                  {
+                      "id":  "work-16",
+                      "width":  300,
+                      "height":  100,
+                      "y":  1460,
+                      "type":  "file",
+                      "x":  -1550,
+                      "file":  "Working Projects/Repositories/SageMaker MovieLens.md"
+                  },
+                  {
+                      "id":  "work-17",
+                      "width":  300,
+                      "height":  100,
+                      "y":  1460,
+                      "type":  "file",
+                      "x":  -1060,
+                      "file":  "Working Projects/Repositories/System Module.md"
+                  },
+                  {
+                      "id":  "work-18",
+                      "width":  300,
+                      "height":  100,
+                      "y":  1460,
+                      "type":  "file",
+                      "x":  -570,
+                      "file":  "Working Projects/Repositories/Weekly Exchange Rate Report.md"
+                  },
+                  {
+                      "id":  "skill-0",
+                      "width":  300,
+                      "height":  100,
+                      "y":  500,
+                      "type":  "file",
+                      "x":  650,
+                      "file":  "Skills/Repositories/Claude Skills Backup Repository.md"
+                  },
+                  {
+                      "id":  "skill-1",
+                      "width":  300,
+                      "height":  100,
+                      "y":  500,
+                      "type":  "file",
+                      "x":  1040,
+                      "file":  "Skills/Repositories/HK Finance Skills Repository.md"
+                  },
+                  {
+                      "id":  "skill-2",
+                      "width":  300,
+                      "height":  100,
+                      "y":  680,
+                      "type":  "file",
+                      "x":  650,
+                      "file":  "Skills/Repositories/Personal Skills Repository.md"
+                  }
+              ]
 }
