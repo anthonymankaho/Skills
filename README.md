@@ -19,4 +19,5 @@ this repo — only `SKILL.md` and supporting scripts are included.
 | [incremental-report-file-chaining](skills/incremental-report-file-chaining/SKILL.md) | Avoiding stale-template/date-window bugs in chained report rebuilds |
 | [mms-login](skills/mms-login/SKILL.md) | Meyer Management System (MMS) portal login incl. email OTP |
 | [project-progress-doc-updater](skills/project-progress-doc-updater/SKILL.md) | Updating project README/SOP progress notes after verified changes |
+| [qwen-assistant-html](skills/qwen-assistant-html/SKILL.md) | Secure Qwen assistant integration for existing HTML/CSS/JS apps |
 | [rmb-rate](skills/rmb-rate/SKILL.md) | BOC HK CNH/HKD exchange rate monthly report automation |
