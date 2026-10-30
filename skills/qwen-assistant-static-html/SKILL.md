@@ -96,4 +96,10 @@ renders inert.
 | `innerHTML` for "markdown" | XSS from the model output into the app |
 | LAN-exposing the relay unprompted | firewall + key-hosting service on a desk PC nobody approved |
 
-Real-world instance: `MPL_System.html` + `C:\Users\User\.mpl-qwen\` (2026-10-30).
+Real-world instances: `MPL_System.html` + `C:\Users\User\.mpl-qwen\` (2026-10-30); the
+Global Purchase Report war-room dashboard (`3D Earth Dashboard\Global_Purchase_3D_WarRoom_TEMP.html`)
+added 2026-10-30 **sharing the same relay process on port 8765 instead of getting its own** -
+one relay can serve several file:// tools: keep the per-app identity in the first line of the
+panel's DATA CONTEXT (`CURRENT APP: ...`), not in a second proxy. Per-app `quota.json` user
+keys (e.g. `gpr-selftest`) still isolate usage records, and a second `.gpr-qwen` copy was
+deliberately NOT created - fewer moving parts, one bearer, one process to restart.
