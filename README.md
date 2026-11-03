@@ -12,6 +12,7 @@ this repo — only `SKILL.md` and supporting scripts are included.
 | [access-control-module](skills/access-control-module/SKILL.md) | Login/permission gating for standalone HTML+localStorage tools |
 | [bilingual-replies](skills/bilingual-replies/SKILL.md) | English + Traditional Chinese bilingual reply convention |
 | [codex-handoff-on-low-usage](skills/codex-handoff-on-low-usage/SKILL.md) | Hand off unfinished work to Codex when Claude usage runs low |
+| [codex-review-reply](skills/codex-review-reply/SKILL.md) | Read-only review results for Codex as `CODEX_REVIEW_R<X>_YYYYMMDD_HHMM.md` |
 | [draft-email](skills/draft-email/SKILL.md) | Turn email requests into Gmail drafts instead of chat text |
 | [excel-to-interactive-html-report](skills/excel-to-interactive-html-report/SKILL.md) | Excel → interactive HTML report via COM + DataTables/flatpickr |
 | [grill-me](skills/grill-me/SKILL.md) | Adversarial interview to stress-test a plan or design |
